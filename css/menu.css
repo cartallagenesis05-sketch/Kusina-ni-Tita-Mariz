@@ -1,0 +1,188 @@
+/* ===== menu.css =====
+   Styles for menu.html and dish.html. Load it AFTER style.css.
+   Colors are set once here so you can change them in one place. */
+
+:root {
+  --navy: #101c2c;
+  --gold: #9a6f2e;
+  --cream: #f7f2e8;
+  --champagne: #e8d5b0;
+  --line: #e4dccb;
+  --ink: #1b2430;
+  --muted: #6a6e74;
+}
+
+.is-hidden { display: none !important; }
+
+/* ---------- Shared small pieces ---------- */
+.menu-shell,
+.dish-top,
+.dish-details,
+.dish-more,
+.dish-missing { padding-left: 48px; padding-right: 48px; }
+
+.menu-shell { background: var(--cream); padding-top: 40px; padding-bottom: 72px; }
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 16px; }
+.chip {
+  font: 500 14px "Inter", sans-serif;
+  padding: 10px 18px; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--ink); border: 1px solid transparent;
+}
+.chip:hover { border-color: var(--line); background: #fff; }
+.chip-active, .chip-active:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+.dish-cat {
+  font: 600 11px "Inter", sans-serif; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 6px;
+}
+.dish-avail { display: flex; align-items: center; gap: 8px; font: 400 12px "Inter", sans-serif; color: var(--muted); margin: 0; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--navy); display: inline-block; }
+.small-note { font: 400 13px/1.5 "Inter", sans-serif; color: var(--muted); margin: 6px 0; }
+
+.btn-order {
+  display: block; text-align: center; text-decoration: none; cursor: pointer;
+  font: 600 14px "Inter", sans-serif; color: var(--ink);
+  background: #f9f1e1; border: 1px solid var(--champagne); border-radius: 6px; padding: 12px 16px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-order:hover { background: var(--champagne); border-color: var(--gold); }
+
+/* ---------- Search and filters ---------- */
+.menu-toolbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.search-box { flex: 1; max-width: 520px; }
+.search-box label, .filter-panel label {
+  display: block; font: 600 12px "Inter", sans-serif; color: var(--ink); margin-bottom: 6px;
+}
+.search-box input {
+  width: 100%; box-sizing: border-box; font: 400 15px "Inter", sans-serif;
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 6px; background: #fff;
+}
+.search-box input:focus, .filter-panel select:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.filter-button {
+  font: 500 13px "Inter", sans-serif; padding: 12px 20px; cursor: pointer;
+  background: #fff; border: 1px solid var(--line); border-radius: 6px; color: var(--ink);
+}
+.filter-button:hover { border-color: var(--gold); }
+.filter-panel {
+  margin-top: 16px; padding: 16px; background: #fff; border: 1px solid var(--line);
+  border-radius: 8px; max-width: 280px;
+}
+.filter-panel select {
+  width: 100%; font: 400 14px "Inter", sans-serif; padding: 10px; border: 1px solid var(--line); border-radius: 6px;
+}
+
+.status-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.filter-tag {
+  font: 500 13px "Inter", sans-serif; padding: 8px 14px; cursor: pointer;
+  background: var(--navy); color: #fff; border: 0; border-radius: 999px;
+}
+.results-line { font: 400 14px "Inter", sans-serif; color: var(--muted); margin: 0; }
+.clear-link {
+  font: 500 13px "Inter", sans-serif; background: none; border: 0; padding: 0;
+  color: var(--gold); text-decoration: underline; cursor: pointer;
+}
+.sample-note { font: 400 12px "Inter", sans-serif; color: var(--muted); margin: 10px 0 24px; }
+
+/* ---------- Dish cards ---------- */
+.dish-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 28px; }
+.dish-card { display: flex; flex-direction: column; }
+.dish-photo { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--line); }
+.dish-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.dish-card:hover .dish-photo img { transform: scale(1.04); }
+.dish-body { display: flex; flex-direction: column; flex: 1; padding-top: 18px; }
+.dish-body h3 { font: 600 24px "Playfair Display", serif; color: var(--navy); margin: 0 0 8px; }
+.dish-price { font: 600 15px "Inter", sans-serif; color: var(--gold); }
+.dish-desc { font: 400 14px/1.6 "Inter", sans-serif; color: var(--muted); margin: 0 0 10px; }
+.dish-body .dish-avail { padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.dish-body .btn-order { margin-top: auto; }
+.empty-message { text-align: center; font: 400 16px "Inter", sans-serif; color: var(--muted); padding: 48px 0; }
+
+/* ---------- Dish page ---------- */
+.dish-top { background: var(--cream); padding-top: 28px; padding-bottom: 64px; }
+.breadcrumb { font: 400 12px "Inter", sans-serif; color: var(--muted); margin: 0 0 24px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold); }
+
+.dish-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.dish-media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; display: block; background: var(--line); }
+.media-note { font: 400 12px/1.5 "Inter", sans-serif; color: var(--muted); margin: 12px 0 0; }
+
+.dish-info h1 { font: 400 56px/1.1 "Playfair Display", serif; color: var(--navy); margin: 0 0 12px; }
+.dish-big-price { font: 600 24px "Inter", sans-serif; color: var(--gold); margin: 0 0 8px; }
+.dish-long { font: 400 17px/1.7 "Inter", sans-serif; color: var(--muted); margin: 18px 0 0; }
+.dish-info hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0 20px; }
+.dish-info h2 { font: 400 26px "Playfair Display", serif; color: var(--navy); margin: 0 0 4px; }
+
+.option-group { border: 0; padding: 0; margin: 20px 0 0; }
+.option-group legend { font: 600 13px "Inter", sans-serif; color: var(--ink); padding: 0; margin-bottom: 10px; }
+.option {
+  display: flex; align-items: flex-start; gap: 12px; cursor: pointer;
+  background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; margin-bottom: 10px;
+}
+.option:hover { border-color: var(--gold); }
+.option-selected { border-color: var(--gold); background: #fffaf0; }
+.option input { margin-top: 3px; accent-color: var(--gold); }
+.option strong { display: block; font: 500 14px "Inter", sans-serif; color: var(--ink); }
+.option small { display: block; font: 400 13px "Inter", sans-serif; color: var(--muted); margin-top: 2px; }
+
+.request-box { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; margin-top: 20px; }
+.request-box label { display: block; font: 600 12px "Inter", sans-serif; margin-bottom: 6px; }
+.request-box textarea {
+  width: 100%; box-sizing: border-box; border: 0; resize: vertical; outline: none;
+  font: 400 14px "Inter", sans-serif; color: var(--ink); background: transparent;
+}
+
+.order-row { display: flex; align-items: center; justify-content: space-between; margin: 24px 0 16px; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.qty button { width: 38px; height: 38px; font-size: 18px; background: none; border: 0; cursor: pointer; color: var(--ink); }
+.qty button:disabled { color: #bbb; cursor: default; }
+.qty span { min-width: 32px; text-align: center; font: 500 15px "Inter", sans-serif; }
+.total-line { font: 600 22px "Inter", sans-serif; color: var(--navy); margin: 0; }
+.cart-button {
+  width: 100%; padding: 15px; cursor: pointer; border: 0; border-radius: 6px;
+  background: var(--navy); color: var(--champagne); font: 600 14px "Inter", sans-serif;
+}
+.cart-button:hover { background: #1c2d45; }
+
+/* ---------- Details, allergy note, pairings ---------- */
+.dish-details { background: #fff; padding-top: 40px; padding-bottom: 48px; }
+.dish-details .chip-row { margin-top: 0; }
+.dish-details .chip { border-color: var(--line); }
+.dish-details .chip-active { border-color: var(--navy); }
+.details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 24px; }
+.details-grid h2 { font: 400 32px "Playfair Display", serif; color: var(--navy); margin: 0 0 12px; }
+.details-grid p { font: 400 16px/1.7 "Inter", sans-serif; color: var(--muted); margin: 0; }
+.details-grid .allergy-note {
+  background: #efe9db; border-radius: 6px; padding: 16px 20px; font-size: 14px; line-height: 1.6; color: var(--ink);
+}
+
+.dish-more { background: var(--cream); padding-top: 56px; padding-bottom: 64px; }
+.dish-more h2 { font: 400 44px "Playfair Display", serif; color: var(--navy); margin: 0 0 16px; }
+.dish-more p { font: 400 17px/1.7 "Inter", sans-serif; color: var(--muted); max-width: 640px; margin: 0 0 24px; }
+.dish-more p a { color: var(--gold); }
+.btn-order-wide { display: inline-block; width: auto; }
+
+.dish-missing { background: var(--cream); text-align: center; padding-top: 96px; padding-bottom: 96px; }
+.dish-missing h1 { font: 400 36px "Playfair Display", serif; color: var(--navy); }
+.dish-missing p { color: var(--muted); }
+.dish-missing .btn-order { display: inline-block; margin-top: 12px; }
+
+/* ---------- Tablet and phone ---------- */
+@media (max-width: 980px) {
+  .dish-grid { grid-template-columns: repeat(2, 1fr); }
+  .dish-layout, .details-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .menu-shell, .dish-top, .dish-details, .dish-more, .dish-missing { padding-left: 20px; padding-right: 20px; }
+  .dish-grid { grid-template-columns: 1fr; }
+  .menu-toolbar { gap: 12px; }
+  .dish-info h1 { font-size: 40px; }
+  .dish-more h2 { font-size: 32px; }
+  .chip-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  .chip { white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dish-photo img { transition: none; }
+  .dish-card:hover .dish-photo img { transform: none; }
+}

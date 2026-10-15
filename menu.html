@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu | Kusina ni Tita Mariz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lobster&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a class="brand" href="homepage.html">
+      <img src="web-backgrounds/logo.png" alt="Kusina ni Tita Mariz logo" class="logo">
+      <span class="brand-name">Kusina ni Tita Mariz</span>
+    </a>
+    <button class="menu-button" id="menu-button">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="homepage.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="homepage.html#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- BANNER -->
+    <section class="page-banner banner-menu">
+      <h1>Our menu</h1>
+      <p>Filipino favorites, cooked slowly and served warm.</p>
+    </section>
+
+    <section class="menu-shell">
+
+      <!-- SEARCH + FILTERS -->
+      <div class="menu-toolbar">
+        <div class="search-box">
+          <label for="search-input">Search the menu</label>
+          <input type="search" id="search-input" placeholder="Search dishes or ingredients">
+        </div>
+        <button type="button" class="filter-button" id="filter-button" aria-expanded="false" aria-controls="filter-panel">Filters</button>
+      </div>
+
+      <div class="filter-panel is-hidden" id="filter-panel">
+        <label for="price-filter">Price</label>
+        <select id="price-filter">
+          <option value="all">All prices</option>
+          <option value="under300">Under &#8369;75</option>
+          <option value="300to500">&#8369;75 to &#8369;150</option>
+          <option value="over500">Over &#8369;150</option>
+        </select>
+      </div>
+
+      <!-- CATEGORY TABS -->
+      <div class="chip-row" id="chip-row">
+        <button type="button" class="chip chip-active" data-cat="all">All dishes</button>
+        <button type="button" class="chip" data-cat="main">Main Dishes</button>
+        <button type="button" class="chip" data-cat="soup">Soup</button>
+        <button type="button" class="chip" data-cat="grilled">Grilled</button>
+        <button type="button" class="chip" data-cat="silog">Silog</button>
+        <button type="button" class="chip" data-cat="sizzling">Sizzlings</button>
+        <button type="button" class="chip" data-cat="dessert">Desserts</button>
+        <button type="button" class="chip" data-cat="drinks">Beverages</button>
+      </div>
+
+      <!-- ACTIVE FILTERS + RESULTS -->
+      <div class="status-row">
+        <button type="button" class="filter-tag is-hidden" id="price-tag"></button>
+        <p class="results-line" id="results-text" aria-live="polite">Showing all dishes.</p>
+        <button type="button" class="clear-link is-hidden" id="clear-button">Clear filters</button>
+      </div>
+      <p class="sample-note">Sample menu. Prices and availability to be confirmed.</p>
+
+      <!-- DISH GRID (filled in by menu.js) -->
+      <div class="dish-grid" id="dish-grid"></div>
+      <p class="empty-message is-hidden" id="empty-message">No dishes match. Try another category, price or search word.</p>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+      <h2>Found something you love?</h2>
+      <p>Save your seat and we will have it ready.</p>
+      <div class="cta-buttons">
+        <a class="button champagne" href="contact.html">Reserve a table</a>
+        <a class="button outline-light" href="about.html">Read our story</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <img src="web-backgrounds/logo.png" alt="Kusina ni Tita Mariz logo" class="footer-logo">
+      <div>
+        <h4>CONTACT</h4>
+        <p>+63 2 8123 4567</p>
+        <p>hello@kusinanititamariz.com</p>
+      </div>
+      <div>
+        <h4>EXPLORE</h4>
+        <p><a href="menu.html">Menu</a> · <a href="about.html">Our story</a></p>
+        <p><a href="contact.html">Reservations</a> · <a href="contact.html">Contact</a></p>
+        <p><a href="homepage.html#faq">Frequently asked questions</a></p>
+      </div>
+      <div>
+        <h4>COME TO OUR TABLE</h4>
+        <p>18 Sampaguita Lane, Salcedo Village<br>Makati City, Metro Manila<br>Tuesday–Sunday · 11:30 AM–10:00 PM<br>Closed Mondays</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Kusina ni Tita Mariz. Concept restaurant; story, menu and contact details are illustrative.</p>
+      <p>Privacy policy · Terms of service</p>
+    </div>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="menu-data.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

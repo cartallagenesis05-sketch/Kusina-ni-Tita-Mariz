@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dish | Kusina ni Tita Mariz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lobster&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a class="brand" href="homepage.html">
+      <img src="web-backgrounds/logo.png" alt="Kusina ni Tita Mariz logo" class="logo">
+      <span class="brand-name">Kusina ni Tita Mariz</span>
+    </a>
+    <button class="menu-button" id="menu-button">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="homepage.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="homepage.html#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- DISH NOT FOUND -->
+    <section class="dish-missing is-hidden" id="dish-missing">
+      <h1>We could not find that dish.</h1>
+      <p>It may have been removed from the sample menu.</p>
+      <a class="btn-order" href="menu.html">Back to the menu</a>
+    </section>
+
+    <!-- DISH DETAIL -->
+    <div id="dish-page">
+      <section class="dish-top">
+        <p class="breadcrumb"><a href="homepage.html">Home</a> / <a href="menu.html">Menu</a> / <span id="crumb-name"></span></p>
+
+        <div class="dish-layout">
+          <div class="dish-media">
+            <img src="" alt="" id="dish-image">
+            <p class="media-note">Illustrative food photography. Final presentation and portion size to be confirmed.</p>
+          </div>
+
+          <div class="dish-info">
+            <p class="dish-cat" id="dish-cat"></p>
+            <h1 id="dish-name"></h1>
+            <p class="dish-big-price" id="dish-price"></p>
+            <p class="small-note">Sample menu · prices and availability to be confirmed</p>
+            <p class="dish-avail"><span class="dot"></span>Sample available</p>
+            <p class="dish-long" id="dish-desc"></p>
+
+            <hr>
+            <h2>Make it your own</h2>
+            <p class="small-note">Sample options. Final customization choices to be confirmed.</p>
+
+            <fieldset class="option-group">
+              <legend>Preparation · choose one</legend>
+              <div id="prep-options"></div>
+            </fieldset>
+
+            <fieldset class="option-group">
+              <legend>Optional add-on · per dish</legend>
+              <label class="option" id="addon-label">
+                <input type="checkbox" id="addon-check">
+                <span><strong id="addon-name"></strong><small id="addon-note">Not selected in this sample order</small></span>
+              </label>
+            </fieldset>
+
+            <div class="request-box">
+              <label for="requests">Special requests (optional)</label>
+              <textarea id="requests" rows="3" maxlength="200" placeholder="Share preparation preferences"></textarea>
+              <p class="small-note">For allergies, consult staff before ordering. Requests are subject to confirmation.</p>
+            </div>
+
+            <div class="order-row">
+              <div class="qty">
+                <button type="button" id="qty-minus" aria-label="Decrease quantity">−</button>
+                <span id="qty-value">1</span>
+                <button type="button" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+              <p class="total-line" id="total-line"></p>
+            </div>
+
+            <button type="button" class="cart-button" id="cart-button"></button>
+            <p class="small-note" id="cart-message" aria-live="polite">Design preview only. This button does not add items or place an order.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILS TABS -->
+      <section class="dish-details">
+        <div class="chip-row">
+          <button type="button" class="chip chip-active" id="tab-ing">Ingredients &amp; notes</button>
+          <button type="button" class="chip" id="tab-serve">Serving suggestion</button>
+        </div>
+        <div class="details-grid">
+          <div>
+            <h2 id="details-title">Simple ingredients. Deep flavor.</h2>
+            <p id="details-text"></p>
+          </div>
+          <p class="allergy-note">Please consult staff about allergies and possible cross-contact before ordering. No allergen-free preparation is promised.</p>
+        </div>
+      </section>
+
+      <!-- PAIRINGS -->
+      <section class="dish-more">
+        <h2>A little more to share.</h2>
+        <p id="pair-text"></p>
+        <a class="btn-order btn-order-wide" href="menu.html">Back to the sample menu</a>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <img src="web-backgrounds/logo.png" alt="Kusina ni Tita Mariz logo" class="footer-logo">
+      <div>
+        <h4>CONTACT</h4>
+        <p>+63 2 8123 4567</p>
+        <p>hello@kusinanititamariz.com</p>
+      </div>
+      <div>
+        <h4>EXPLORE</h4>
+        <p><a href="menu.html">Menu</a> · <a href="about.html">Our story</a></p>
+        <p><a href="contact.html">Reservations</a> · <a href="contact.html">Contact</a></p>
+        <p><a href="homepage.html#faq">Frequently asked questions</a></p>
+      </div>
+      <div>
+        <h4>COME TO OUR TABLE</h4>
+        <p>18 Sampaguita Lane, Salcedo Village<br>Makati City, Metro Manila<br>Tuesday–Sunday · 11:30 AM–10:00 PM<br>Closed Mondays</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Kusina ni Tita Mariz. Concept restaurant; story, menu and contact details are illustrative.</p>
+      <p>Privacy policy · Terms of service</p>
+    </div>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="menu-data.js"></script>
+  <script src="dish.js"></script>
+</body>
+</html>
