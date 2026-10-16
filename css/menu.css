@@ -186,3 +186,9 @@
   .dish-photo img { transition: none; }
   .dish-card:hover .dish-photo img { transform: none; }
 }
+
+
+/* Hide breadcrumb on dish page */
+.breadcrumb {
+  display: none;
+}
