@@ -29,7 +29,7 @@ function updateTotal() {
   var total = unit * quantity;
   document.getElementById("qty-value").textContent = quantity;
   document.getElementById("total-line").textContent = quantity + " × ₱" + unit + " = ₱" + total;
-  document.getElementById("cart-button").textContent = "Add " + quantity + " to sample cart · ₱" + total;
+  document.getElementById("cart-button").textContent = "Order · ₱" + total;
   document.getElementById("qty-minus").disabled = (quantity == 1);
   document.getElementById("qty-plus").disabled = (quantity == 10);
 }
